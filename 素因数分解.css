@@ -3,3 +3,22 @@ input[type="number"]::-webkit-outer-spin-button {
     -webkit-appearance: none;
     margin: 0;
 }
+
+p{
+    background-color: black;
+    color: white;
+}
+
+@media screen and (max-width: 768px) {
+    p{
+        background-color: black;
+         color:green;
+     }
+ }
+ 
+ @media screen and (max-width: 480px) {
+    p{
+        background-color: black;
+         color:red;
+     }
+ }

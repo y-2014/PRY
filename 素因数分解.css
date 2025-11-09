@@ -17,8 +17,5 @@ p{
  }
  
  @media screen and (max-width: 480px) {
-    p{
-        background-color: black;
-         color:red;
-     }
+    
  }

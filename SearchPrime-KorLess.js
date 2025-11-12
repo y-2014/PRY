@@ -74,10 +74,11 @@ function search() {
         }
         i --;
     }
-
+    
     if ( a < n ) {
         Ans = `${ a }個しか見つけられなかったよ<br>`+ Ans;
     }
+    Ans = `K = ${ k } , N = ${ n }<br>`+ Ans;
     document.getElementById( "result" ).innerHTML = Ans;
     return;
 

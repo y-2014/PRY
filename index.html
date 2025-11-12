@@ -10,8 +10,30 @@
     <p>気分屋のプログラマーが</p>
     <p>プログラミングを使って思い付いたものを作ります</p>
     <a href = "https://y-2014.github.io/PRY/PrimeFactorization.html">素因数分解ツール</a>
+    <a href = "https://y-2014.github.io/PRY/SearchPrime-KorLess.html">K以下素数列挙</a>
     <p>以下、不定期更新予定…</p>
-    <p>最終更新日：2025-10-24</p>
+    <p>最終更新日：<time id="modified_date"></time></p>
+    <script>
+      const last = new Date(document.lastModified);
+      const year = last.getFullYear();
+      const month = last.getMonth() + 1;
+      const date = last.getDate();
+      
+      let fixedMonth = month;
+      let fixedDate = date;
+      if (month < 10) {
+        fixedMonth = "0" + month;
+      }
+      if (date < 10) {
+        fixedDate = "0" + date;
+      }
+
+      const viewDateText = `${ year }-${ fixedMonth }-${ fixedDate }`;
+      const datetimeText = viewDateText;
+      const target = document.getElementById('modified_date');
+      target.textContent = viewDateText;
+      target.setAttribute("datetime", datetimeText);
+    </script>
   </body>
 </html>
 

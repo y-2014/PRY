@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>K以下素数列挙</title>
+    </head>
+    <body>
+            <link rel = "stylesheet" href = "SearchPrime-KorLess.css">
+        <a href = "https://y-2014.github.io/PRY/">トップに戻る</a>
+        <p>
+            K以下の素数をN個見たい！<br>
+        </p>
+        <p>
+            (条件： Kは 1以上100,000,000以下、Nは 1以上100以下 )<br>
+        </p>
+        <input type="number" class="K" id="K" placeholder="K" max = 100000000 min = 2>
+        <input type="number" class="N" id="N" placeholder="N" max = 100 min = 1>
+        <button onclick="search()">サーチ</button>
+        <p id="result"></p>
+        <script type = "text/javascript" src = "SearchPrime-KorLess.js"></script>
+    </body>
+</html>

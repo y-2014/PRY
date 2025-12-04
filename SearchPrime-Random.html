@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>ランダム素数探索</title>
+    </head>
+    <body>
+        <link rel = "stylesheet" href = "SearchPrime-Random.css">
+        <a href = "https://y-2014.github.io/PRY/">トップに戻る</a>
+        <h1>A以上B以下の素数をN個見たい！</h1>
+        <p>
+            結果は毎回変わるよ<br>
+            (条件： Aは 1以上99,999,999以下、 Bは A以上100,000,000以下、Nは 1以上100以下 )<br>
+        </p>
+        <input type="number" class="A" id="A" placeholder="A" max = "Amax" min = "1" maxlength = "8" >
+        <input type="number" class="B" id="B" placeholder="B" max = "Bmax" min = "1" maxlength = "9" ><br>
+        <input type="number" class="N" id="N" placeholder="N" max = "Nmax" min = "1" pattern="\d*" maxlength = "3" ><br>
+        <button onclick="search()">サーチ</button>
+        <p id="result"></p>
+        <script type = "text/javascript" src = "SearchPrime-Random.js"></script>
+    </body>
+</html>

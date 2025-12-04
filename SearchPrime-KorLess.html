@@ -10,10 +10,10 @@
         <a href = "https://y-2014.github.io/PRY/">トップに戻る</a>
         <h1>K以下の素数をN個見たい！</h1>
         <p>
-            (条件： Kは 1以上100,000,000以下、Nは 1以上100以下 )<br>
+            (条件： Kは 2以上100,000,000以下、Nは 1以上100以下 )<br>
         </p>
-        <input type="number" class="K" id="K" placeholder="K" max = 100000000 min = 2>
-        <input type="number" class="N" id="N" placeholder="N" max = 100 min = 1>
+        <input type="number" class="K" id="K" placeholder="K" max = "Kmax" min = 2>
+        <input type="number" class="N" id="N" placeholder="N" max = "Nmax" min = 1 step = 1>
         <button onclick="search()">サーチ</button>
         <p id="result"></p>
         <script type = "text/javascript" src = "SearchPrime-KorLess.js"></script>

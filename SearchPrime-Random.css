@@ -1,0 +1,27 @@
+.A::-webkit-inner-spin-button,
+.A::-webkit-outer-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+
+.B::-webkit-inner-spin-button,
+.B::-webkit-outer-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+
+
+.N::-webkit-inner-spin-button,
+.N::-webkit-outer-spin-button {
+    margin: 0;
+}
+
+
+
+@media screen and (max-width: 768px) {
+    
+ }
+ 
+ @media screen and (max-width: 480px) {
+    
+ }

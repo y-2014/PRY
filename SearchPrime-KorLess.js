@@ -1,9 +1,10 @@
 function search() {
     // 変数の取得と確認
     var k = parseFloat( document.getElementById("K").value );
-    var n = parseFloat( document.getElementById("N").value );
+    var n = parseInt( document.getElementById("N").value );
     
-    const max = 100000000;
+    const Kmax = 100000000;
+    const Nmax = 100;
 
     if ( isNaN( k ) || isNaN( n ) ) {
         document.getElementById( "result" ).textContent = "数値を入力してね";
@@ -18,8 +19,8 @@ function search() {
         return x;
     }
 
-    k = fix( k , 2 , max );
-    n = fix( n , 1 , 100 );
+    k = fix( k , 2 , Kmax );
+    n = fix( n , 1 , Nmax );
  
     // エラトステネスの篩
     isP = new Array( k + 1 );

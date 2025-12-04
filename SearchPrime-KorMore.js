@@ -22,8 +22,8 @@ function search() {
     k = fix( K , 2 , Kmax );
     n = fix( N , 1 , Nmax );
 
-    // エラトステネスの篩。上限：( K + 10000 ) または ( K * 1.1 )
-    k2 = Math.max( Math.ceil( K * 1.1 ) , Math.ceil( K + 10000 ) );
+    // エラトステネスの篩。上限：K + 10000
+    k2 =  k + 10000;
     isP = new Array( k2 + 1 );
     for ( i = 0 ; i <= k2 ; i ++ ) {
         isP[ i ] = true;

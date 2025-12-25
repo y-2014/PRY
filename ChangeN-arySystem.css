@@ -1,0 +1,38 @@
+@charset "UTF-8";
+body {
+    background-color: hsla( 197 , 10% , 92% , 1 );
+    text-align: center;
+}
+
+header {
+    text-align: left;
+}
+
+.null {
+    color: gray;
+}
+
+#inputNum {
+    font-size: 110%;
+    text-align: left;
+}
+
+#output {
+    margin: auto;
+    margin-bottom: 100px;
+    background-color: lightblue;
+}
+
+.index {
+    background-color: lightgray;
+    border: 1px solid black;
+    width: 50px;
+}
+
+.result {
+    background-color: white;
+    border: 1px solid black;
+    width: auto;
+    min-width: 160px;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}

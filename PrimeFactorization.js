@@ -63,15 +63,19 @@
       // 結果をHTMLに表示
       Line = "";
       if ( num == 1 ) {
-        Line = "1";
+        Line = "1<br>";
       }
       else {
         for ( i = 0 ; i < ans.length ; i ++ ) {
-          Line += `${ ans[ i ][ 0 ] } ^ ${ ans[ i ][ 1 ] } × `
+          if ( i == ans.length - 1 ) {
+            Line += `&nbsp;${ ans[ i ][ 0 ] } ^ ${ ans[ i ][ 1 ] }<br>`;
+          }
+          else {
+            Line += `&nbsp;${ ans[ i ][ 0 ] } ^ ${ ans[ i ][ 1 ] }&nbsp;x<br>`
+          }
         }
-        Line = Line.slice( 0 , -3 );
       }
       
-      document.getElementById("result").textContent = `${ num }  = ` + Line;
-      return
+      document.getElementById("result").innerHTML = `${ num }  =<br>${ Line }`;
+      return;
     }

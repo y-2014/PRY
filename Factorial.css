@@ -1,0 +1,20 @@
+@charset "UTF-8";
+
+body {
+    background-color: hsla( 197 , 10% , 92% , 1 );
+    text-align: center;
+}
+
+header {
+    text-align: left;
+}
+
+#inputNum {
+    font-size: 110%;
+    text-align: left;
+}
+
+#result {
+    display: inline-block;
+    word-break: break-all;
+}

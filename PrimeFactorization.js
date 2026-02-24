@@ -1,81 +1,61 @@
-    function calculate() {
-      // HTMLから数値入力値を取得し、数値型に変換
-      const num = parseFloat(document.getElementById("num").value);
-      
-      // NaN（数値ではない）かどうかチェック
-      if ( isNaN( num ) ) {
-        document.getElementById("result").textContent = "数値を入力してね";
-        return;
-      }
-      if ( ( num <= 0 ) || ( !Number.isInteger( num ) ) ) {
-        document.getElementById("result").textContent = "正の整数を入れてね";
-        return;
-      }
-      if ( num > 50000000 ) {
-        document.getElementById("result").textContent = "数値が大きすぎるよ（上限：50,000,000）";
-        return;
-      }
-      
+function calculate() {
 
-      // 計算を実行
-      
-      // 素数列Pを作成
-      P = new Array( num + 1 );
-      for ( i = 0 ; i <= num ; i ++ ) {
-        P[ i ] = true;
-      }
+  // HTMLから数値入力値を取得し、数値型に変換
+  const Info = document.getElementById("num");
+  var num = parseInt(Info.value);
 
-      // エラトステネスの篩
-      function search( P , a ) {
-        if ( P[ a ] ) {
-            for ( k = a ; k * a <= num ; k ++ ) {
-                P[ k * a ] = false;
-            }
-        }
-      }
-      P[ 0 ] = false;
-      P[ 1 ] = false;
+  // NaN（数値ではない）かどうかチェック
+  if (isNaN(num)) {
+    document.getElementById("result").textContent = "数値を入力してね";
+    return;
+  }
+  
+  num = Math.max( num , Info.min );
+  num = Math.min( num , Info.max );
 
-      search( P , 2 );
-      search( P , 3 );
-      for ( i = 1 ; 6 * i + 1 <= num ; i ++ ) {
-        search( P , 6 * i - 1 );
-        search( P , 6 * i + 1 );
-      }
-      
-      // 素数で割っていく
-      ans = [];
-      n = num;
-      a = 2;
-      while ( n > 1 ) {
-        k = 0;
-        while ( ( P[ a ] ) && ( n % a == 0 ) ) {
-            k += 1;
-            n /= a;
-        }        
-        if ( k > 0 ) {
-            ans.push( [ a , k ] );
-        }
 
-        a += 1;
-      }
+  // 計算を実行
+  var n = num;
 
-      // 結果をHTMLに表示
-      Line = "";
-      if ( num == 1 ) {
-        Line = "1<br>";
+  function search( a ) {
+    k = 0;
+    while ( n % a == 0 ) {
+      n /= a;
+      k ++;
+    }
+    if ( k > 0 ) {
+      Factor[ Factor.length ] = [ a, k ];
+    }
+  }
+
+  // 実行部分
+  Factor = new Array( 0 );
+
+  search(2);
+  search(3);
+  for (i = 1; n > 1; i++) {
+    search(6 * i - 1);
+    search(6 * i + 1);
+  }
+
+
+
+  // 結果をHTMLに表示
+  Line = "";
+  if (num == 1) {
+    Line = "1<br>";
+  }
+  else {
+    for (i = 0; i < Factor.length; i++) {
+      if (i == Factor.length - 1) {
+        Line += `&nbsp;${Factor[i][0]} ^ ${Factor[i][1]}<br>`;
       }
       else {
-        for ( i = 0 ; i < ans.length ; i ++ ) {
-          if ( i == ans.length - 1 ) {
-            Line += `&nbsp;${ ans[ i ][ 0 ] } ^ ${ ans[ i ][ 1 ] }<br>`;
-          }
-          else {
-            Line += `&nbsp;${ ans[ i ][ 0 ] } ^ ${ ans[ i ][ 1 ] }&nbsp;x<br>`
-          }
-        }
+        Line += `&nbsp;${Factor[i][0]} ^ ${Factor[i][1]}&nbsp;x<br>`
       }
-      
-      document.getElementById("result").innerHTML = `${ num }  =<br>${ Line }`;
-      return;
     }
+  }
+
+  document.getElementById("result").innerHTML = `${num}  =<br>${Line}`;
+  return;
+}

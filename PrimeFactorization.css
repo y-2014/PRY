@@ -1,3 +1,9 @@
+@charset "UTF-8";
+body {
+    background-color: hsla( 197 , 10% , 92% , 1 );
+    text-align: center;
+}
+
 input[type="number"]::-webkit-inner-spin-button,
 input[type="number"]::-webkit-outer-spin-button {
     -webkit-appearance: none;

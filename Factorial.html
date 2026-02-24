@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>階乗の計算</title>
+    <link rel = "stylesheet" href = "Factorial.css">
+
+</head>
+<body>
+    
+    <header>
+        <a href = "index.html">トップに戻る</a>
+    </header>
+
+    <h1>階乗の計算</h1>
+    <label for = "inputNum">自然数を入力してください</label><br>
+    <p>
+        (条件：Nは 0以上10000以下)
+    </p>
+    <input type = "number" id = "inputNum" 
+        max = 10000 min = 0 step = 1
+        placeholder="自然数を入力してね" >
+    <button onclick="Calculate()">計算</button>
+
+    <h3>計算結果</h3>
+    <div id = "result"></div>
+
+    <script type = "text/javascript" src = "Factorial.js"></script>
+
+
+
+</body>
+</html>
